@@ -13,7 +13,7 @@ import java.util.Set;
 
 import static com.comphenix.protocol.utility.MinecraftReflection.getMinecraftClass;
 
-public class WrapperPlayServerAdvancements extends AbstractPacket {
+public class WrapperPlayServerAdvancements extends PacketWrapper {
 
     public static final PacketType TYPE = PacketType.Play.Server.ADVANCEMENTS;
     

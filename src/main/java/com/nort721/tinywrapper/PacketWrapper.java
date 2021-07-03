@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 import java.lang.reflect.InvocationTargetException;
 
 @Getter
-public abstract class AbstractPacket {
+public abstract class PacketWrapper {
     protected PacketEvent packetEvent;
     protected PacketContainer handle;
 
@@ -22,12 +22,16 @@ public abstract class AbstractPacket {
      * @param packetEvent - the packet event.
      * @param type - the packet type.
      */
-    protected AbstractPacket(PacketEvent packetEvent, PacketType type) {
+    protected PacketWrapper(PacketEvent packetEvent, PacketType type) {
         Preconditions.checkNotNull(packetEvent, "Packet event cannot be NULL.");
-        Preconditions.checkArgument(!Objects.equal(packetEvent.getPacketType(), type), packetEvent.getPacket() + " is not a packet of type " + type);
+        /* This is here because we are using the flying wrapper for types of Position and Look as well */
+        if (!Packets.FLYING.contains(type))
+            Preconditions.checkArgument(!Objects.equal(packetEvent.getPacketType(), type), packetEvent.getPacket() + " is not a packet of type " + type);
         this.packetEvent = packetEvent;
         this.handle = packetEvent.getPacket();
     }
+
+    public PacketType getPacketType() { return packetEvent.getPacketType(); }
 
     /**
      * Send this packet to the target

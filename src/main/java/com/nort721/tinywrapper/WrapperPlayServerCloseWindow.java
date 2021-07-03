@@ -3,7 +3,7 @@ package com.nort721.tinywrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 
-public class WrapperPlayServerCloseWindow extends AbstractPacket {
+public class WrapperPlayServerCloseWindow extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Server.CLOSE_WINDOW;
 
 	public WrapperPlayServerCloseWindow(PacketEvent packetEvent) {

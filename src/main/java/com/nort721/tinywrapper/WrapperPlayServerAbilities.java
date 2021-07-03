@@ -3,7 +3,7 @@ package com.nort721.tinywrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 
-public class WrapperPlayServerAbilities extends AbstractPacket {
+public class WrapperPlayServerAbilities extends com.nort721.godseye.utils.tinywrapper.PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Server.ABILITIES;
 
 	public WrapperPlayServerAbilities(PacketEvent packetEvent) {

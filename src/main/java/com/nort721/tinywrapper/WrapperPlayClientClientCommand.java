@@ -4,7 +4,7 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.wrappers.EnumWrappers.ClientCommand;
 
-public class WrapperPlayClientClientCommand extends AbstractPacket {
+public class WrapperPlayClientClientCommand extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.CLIENT_COMMAND;
 
 	public WrapperPlayClientClientCommand(PacketEvent packetEvent) {

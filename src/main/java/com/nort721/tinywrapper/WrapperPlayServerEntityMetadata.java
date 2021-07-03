@@ -8,7 +8,7 @@ import org.bukkit.entity.Entity;
 
 import java.util.List;
 
-public class WrapperPlayServerEntityMetadata extends AbstractPacket {
+public class WrapperPlayServerEntityMetadata extends PacketWrapper {
 	public static final PacketType TYPE =
 			PacketType.Play.Server.ENTITY_METADATA;
 

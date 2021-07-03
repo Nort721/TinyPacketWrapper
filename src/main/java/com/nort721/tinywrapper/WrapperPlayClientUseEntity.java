@@ -7,7 +7,7 @@ import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.util.Vector;
 
-public class WrapperPlayClientUseEntity extends AbstractPacket {
+public class WrapperPlayClientUseEntity extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.USE_ENTITY;
 
 	public WrapperPlayClientUseEntity(PacketEvent packetEvent) {

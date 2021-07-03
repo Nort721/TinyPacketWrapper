@@ -4,7 +4,7 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.wrappers.MinecraftKey;
 
-public class WrapperPlayClientAdvancements extends AbstractPacket {
+public class WrapperPlayClientAdvancements extends PacketWrapper {
 
     public static final PacketType TYPE = PacketType.Play.Client.ADVANCEMENTS;
     

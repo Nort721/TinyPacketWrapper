@@ -4,7 +4,7 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.wrappers.EnumWrappers.Hand;
 
-public class WrapperPlayClientBlockPlace extends AbstractPacket {
+public class WrapperPlayClientBlockPlace extends com.nort721.godseye.utils.tinywrapper.PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.BLOCK_PLACE;
 
 	public WrapperPlayClientBlockPlace(PacketEvent packetEvent) {

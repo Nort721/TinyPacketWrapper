@@ -4,7 +4,7 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.wrappers.EnumWrappers.ChatVisibility;
 
-public class WrapperPlayClientSettings extends AbstractPacket {
+public class WrapperPlayClientSettings extends com.nort721.godseye.utils.tinywrapper.PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.SETTINGS;
 
 	public WrapperPlayClientSettings(PacketEvent packetEvent) {

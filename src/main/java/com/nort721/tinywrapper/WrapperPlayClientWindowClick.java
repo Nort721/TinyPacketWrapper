@@ -4,7 +4,7 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class WrapperPlayClientWindowClick extends AbstractPacket {
+public class WrapperPlayClientWindowClick extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.WINDOW_CLICK;
 
 	public WrapperPlayClientWindowClick(PacketEvent packetEvent) {

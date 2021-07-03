@@ -3,7 +3,7 @@ package com.nort721.tinywrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 
-public class WrapperPlayClientSteerVehicle extends AbstractPacket {
+public class WrapperPlayClientSteerVehicle extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.STEER_VEHICLE;
 
 	public WrapperPlayClientSteerVehicle(PacketEvent packetEvent) {

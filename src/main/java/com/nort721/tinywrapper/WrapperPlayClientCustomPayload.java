@@ -7,7 +7,7 @@ import com.comphenix.protocol.wrappers.MinecraftKey;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 
-public class WrapperPlayClientCustomPayload extends AbstractPacket {
+public class WrapperPlayClientCustomPayload extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.CUSTOM_PAYLOAD;
 
 	public WrapperPlayClientCustomPayload(PacketEvent packetEvent) {

@@ -6,7 +6,7 @@ import com.comphenix.protocol.wrappers.EnumWrappers.PlayerAction;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
-public class WrapperPlayClientEntityAction extends AbstractPacket {
+public class WrapperPlayClientEntityAction extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.ENTITY_ACTION;
 
 	public WrapperPlayClientEntityAction(PacketEvent packetEvent) {

@@ -8,7 +8,7 @@ import org.bukkit.util.Vector;
 
 import java.util.UUID;
 
-public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
+public class WrapperPlayServerNamedEntitySpawn extends PacketWrapper {
 	public static final PacketType TYPE =
 			PacketType.Play.Server.NAMED_ENTITY_SPAWN;
 

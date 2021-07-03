@@ -5,7 +5,7 @@ import com.comphenix.protocol.events.PacketEvent;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
-public class WrapperPlayServerRelEntityMoveLook extends AbstractPacket {
+public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.utils.tinywrapper.PacketWrapper {
 	public static final PacketType TYPE =
 			PacketType.Play.Server.REL_ENTITY_MOVE_LOOK;
 

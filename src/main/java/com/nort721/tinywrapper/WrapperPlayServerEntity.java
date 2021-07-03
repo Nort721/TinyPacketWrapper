@@ -5,7 +5,7 @@ import com.comphenix.protocol.events.PacketEvent;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
-public class WrapperPlayServerEntity extends AbstractPacket {
+public class WrapperPlayServerEntity extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Server.ENTITY;
 
 	public WrapperPlayServerEntity(PacketEvent packetEvent) {

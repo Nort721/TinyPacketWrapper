@@ -4,7 +4,7 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.wrappers.EnumWrappers.ResourcePackStatus;
 
-public class WrapperPlayClientResourcePackStatus extends AbstractPacket {
+public class WrapperPlayClientResourcePackStatus extends PacketWrapper {
 	public static final PacketType TYPE =
 			PacketType.Play.Client.RESOURCE_PACK_STATUS;
 

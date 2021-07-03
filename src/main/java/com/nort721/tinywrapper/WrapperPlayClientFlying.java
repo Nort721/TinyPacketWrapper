@@ -3,7 +3,7 @@ package com.nort721.tinywrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 
-public class WrapperPlayClientFlying extends AbstractPacket {
+public class WrapperPlayClientFlying extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.FLYING;
 
 	public WrapperPlayClientFlying(PacketEvent packetEvent) {

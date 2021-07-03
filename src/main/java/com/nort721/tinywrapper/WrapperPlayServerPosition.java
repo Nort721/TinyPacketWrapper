@@ -8,7 +8,7 @@ import com.comphenix.protocol.wrappers.EnumWrappers;
 
 import java.util.Set;
 
-public class WrapperPlayServerPosition extends AbstractPacket {
+public class WrapperPlayServerPosition extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Server.POSITION;
 
 	public WrapperPlayServerPosition(PacketEvent packetEvent) {

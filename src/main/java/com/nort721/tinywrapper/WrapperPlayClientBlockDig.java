@@ -6,7 +6,7 @@ import com.comphenix.protocol.wrappers.BlockPosition;
 import com.comphenix.protocol.wrappers.EnumWrappers.Direction;
 import com.comphenix.protocol.wrappers.EnumWrappers.PlayerDigType;
 
-public class WrapperPlayClientBlockDig extends AbstractPacket {
+public class WrapperPlayClientBlockDig extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.BLOCK_DIG;
 
 	public WrapperPlayClientBlockDig(PacketEvent packetEvent) {

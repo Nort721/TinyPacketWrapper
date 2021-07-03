@@ -3,7 +3,7 @@ package com.nort721.tinywrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 
-public class WrapperPlayClientPosition extends AbstractPacket {
+public class WrapperPlayClientPosition extends com.nort721.godseye.utils.tinywrapper.PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.POSITION;
 
 	public WrapperPlayClientPosition(PacketEvent packetEvent) {
