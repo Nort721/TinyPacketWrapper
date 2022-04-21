@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -18,7 +18,7 @@ public class WrapperPlayClientLook extends PacketWrapper {
 	 * @return The current Yaw
 	 */
 	public float getYaw() {
-		return handle.getFloat().read(0);
+		return packetData.getFloat().read(0);
 	}
 
 	/**
@@ -27,7 +27,7 @@ public class WrapperPlayClientLook extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setYaw(float value) {
-		handle.getFloat().write(0, value);
+		packetData.getFloat().write(0, value);
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class WrapperPlayClientLook extends PacketWrapper {
 	 * @return The current Pitch
 	 */
 	public float getPitch() {
-		return handle.getFloat().read(1);
+		return packetData.getFloat().read(1);
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class WrapperPlayClientLook extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setPitch(float value) {
-		handle.getFloat().write(1, value);
+		packetData.getFloat().write(1, value);
 	}
 
 	/**
@@ -58,7 +58,7 @@ public class WrapperPlayClientLook extends PacketWrapper {
 	 * @return The current On Ground
 	 */
 	public boolean getOnGround() {
-		return handle.getBooleans().read(0);
+		return packetData.getBooleans().read(0);
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class WrapperPlayClientLook extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setOnGround(boolean value) {
-		handle.getBooleans().write(0, value);
+		packetData.getBooleans().write(0, value);
 	}
 
 }

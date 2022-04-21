@@ -1,10 +1,10 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.wrappers.EnumWrappers.ChatVisibility;
 
-public class WrapperPlayClientSettings extends com.nort721.godseye.utils.tinywrapper.PacketWrapper {
+public class WrapperPlayClientSettings extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.SETTINGS;
 
 	public WrapperPlayClientSettings(PacketEvent packetEvent) {
@@ -19,7 +19,7 @@ public class WrapperPlayClientSettings extends com.nort721.godseye.utils.tinywra
 	 * @return The current Locale
 	 */
 	public String getLocale() {
-		return handle.getStrings().read(0);
+		return packetData.getStrings().read(0);
 	}
 
 	/**
@@ -28,7 +28,7 @@ public class WrapperPlayClientSettings extends com.nort721.godseye.utils.tinywra
 	 * @param value - new value.
 	 */
 	public void setLocale(String value) {
-		handle.getStrings().write(0, value);
+		packetData.getStrings().write(0, value);
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class WrapperPlayClientSettings extends com.nort721.godseye.utils.tinywra
 	 * @return The current View distance
 	 */
 	public int getViewDistance() {
-		return handle.getIntegers().read(0);
+		return packetData.getIntegers().read(0);
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class WrapperPlayClientSettings extends com.nort721.godseye.utils.tinywra
 	 * @param value - new value.
 	 */
 	public void setViewDistance(byte value) {
-		handle.getIntegers().write(0, (int) value);
+		packetData.getIntegers().write(0, (int) value);
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class WrapperPlayClientSettings extends com.nort721.godseye.utils.tinywra
 	 * @return The current Chat flags
 	 */
 	public ChatVisibility getChatFlags() {
-		return handle.getChatVisibilities().read(0);
+		return packetData.getChatVisibilities().read(0);
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class WrapperPlayClientSettings extends com.nort721.godseye.utils.tinywra
 	 * @param value - new value.
 	 */
 	public void setChatFlags(ChatVisibility value) {
-		handle.getChatVisibilities().write(0, value);
+		packetData.getChatVisibilities().write(0, value);
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class WrapperPlayClientSettings extends com.nort721.godseye.utils.tinywra
 	 * @return The current Chat colours
 	 */
 	public boolean getChatColours() {
-		return handle.getBooleans().read(0);
+		return packetData.getBooleans().read(0);
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class WrapperPlayClientSettings extends com.nort721.godseye.utils.tinywra
 	 * @param value - new value.
 	 */
 	public void setChatColours(boolean value) {
-		handle.getBooleans().write(0, value);
+		packetData.getBooleans().write(0, value);
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class WrapperPlayClientSettings extends com.nort721.godseye.utils.tinywra
 	 * @return The current Displayed skin parts
 	 */
 	public int getDisplayedSkinParts() {
-		return handle.getIntegers().read(1);
+		return packetData.getIntegers().read(1);
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class WrapperPlayClientSettings extends com.nort721.godseye.utils.tinywra
 	 * @param value - new value.
 	 */
 	public void setDisplayedSkinParts(int value) {
-		handle.getIntegers().write(1, value);
+		packetData.getIntegers().write(1, value);
 	}
 
 }

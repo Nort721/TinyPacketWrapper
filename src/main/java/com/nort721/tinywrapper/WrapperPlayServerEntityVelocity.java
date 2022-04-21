@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -21,7 +21,7 @@ public class WrapperPlayServerEntityVelocity extends PacketWrapper {
 	 * @return The current Entity ID
 	 */
 	public int getEntityID() {
-		return handle.getIntegers().read(0);
+		return packetData.getIntegers().read(0);
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class WrapperPlayServerEntityVelocity extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setEntityID(int value) {
-		handle.getIntegers().write(0, value);
+		packetData.getIntegers().write(0, value);
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class WrapperPlayServerEntityVelocity extends PacketWrapper {
 	 * @return The spawned entity.
 	 */
 	public Entity getEntity(World world) {
-		return handle.getEntityModifier(world).read(0);
+		return packetData.getEntityModifier(world).read(0);
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class WrapperPlayServerEntityVelocity extends PacketWrapper {
 	 * @return The current velocity X
 	 */
 	public double getVelocityX() {
-		return handle.getIntegers().read(1) / 8000.0D;
+		return packetData.getIntegers().read(1) / 8000.0D;
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class WrapperPlayServerEntityVelocity extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setVelocityX(double value) {
-		handle.getIntegers().write(1, (int) (value * 8000.0D));
+		packetData.getIntegers().write(1, (int) (value * 8000.0D));
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class WrapperPlayServerEntityVelocity extends PacketWrapper {
 	 * @return The current velocity y
 	 */
 	public double getVelocityY() {
-		return handle.getIntegers().read(2) / 8000.0D;
+		return packetData.getIntegers().read(2) / 8000.0D;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class WrapperPlayServerEntityVelocity extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setVelocityY(double value) {
-		handle.getIntegers().write(2, (int) (value * 8000.0D));
+		packetData.getIntegers().write(2, (int) (value * 8000.0D));
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class WrapperPlayServerEntityVelocity extends PacketWrapper {
 	 * @return The current velocity z
 	 */
 	public double getVelocityZ() {
-		return handle.getIntegers().read(3) / 8000.0D;
+		return packetData.getIntegers().read(3) / 8000.0D;
 	}
 
 	/**
@@ -104,6 +104,6 @@ public class WrapperPlayServerEntityVelocity extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setVelocityZ(double value) {
-		handle.getIntegers().write(3, (int) (value * 8000.0D));
+		packetData.getIntegers().write(3, (int) (value * 8000.0D));
 	}
 }

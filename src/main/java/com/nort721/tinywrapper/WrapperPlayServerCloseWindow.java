@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -18,7 +18,7 @@ public class WrapperPlayServerCloseWindow extends PacketWrapper {
 	 * @return The current Window ID
 	 */
 	public int getWindowId() {
-		return handle.getIntegers().read(0);
+		return packetData.getIntegers().read(0);
 	}
 
 	/**
@@ -27,7 +27,7 @@ public class WrapperPlayServerCloseWindow extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setWindowId(int value) {
-		handle.getIntegers().write(0, value);
+		packetData.getIntegers().write(0, value);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -20,7 +20,7 @@ public class WrapperPlayClientUseEntity extends PacketWrapper {
 	 * @return The current entity ID
 	 */
 	public int getTargetID() {
-		return handle.getIntegers().read(0);
+		return packetData.getIntegers().read(0);
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class WrapperPlayClientUseEntity extends PacketWrapper {
 	 * @return The targeted entity.
 	 */
 	public Entity getTarget(World world) {
-		return handle.getEntityModifier(world).read(0);
+		return packetData.getEntityModifier(world).read(0);
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class WrapperPlayClientUseEntity extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setTargetID(int value) {
-		handle.getIntegers().write(0, value);
+		packetData.getIntegers().write(0, value);
 	}
 
 	/**
@@ -58,7 +58,7 @@ public class WrapperPlayClientUseEntity extends PacketWrapper {
 	 * @return The current Type
 	 */
 	public EntityUseAction getType() {
-		return handle.getEntityUseActions().read(0);
+		return packetData.getEntityUseActions().read(0);
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class WrapperPlayClientUseEntity extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setType(EntityUseAction value) {
-		handle.getEntityUseActions().write(0, value);
+		packetData.getEntityUseActions().write(0, value);
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class WrapperPlayClientUseEntity extends PacketWrapper {
 	 * @return The target vector or null
 	 */
 	public Vector getTargetVector() {
-		return handle.getVectors().read(0);
+		return packetData.getVectors().read(0);
 	}
 
 	/**
@@ -87,6 +87,6 @@ public class WrapperPlayClientUseEntity extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setTargetVector(Vector value) {
-		handle.getVectors().write(0, value);
+		packetData.getVectors().write(0, value);
 	}
 }

@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -18,7 +18,7 @@ public class WrapperPlayClientSteerVehicle extends PacketWrapper {
 	 * @return The current Sideways
 	 */
 	public float getSideways() {
-		return handle.getFloat().read(0);
+		return packetData.getFloat().read(0);
 	}
 
 	/**
@@ -27,7 +27,7 @@ public class WrapperPlayClientSteerVehicle extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setSideways(float value) {
-		handle.getFloat().write(0, value);
+		packetData.getFloat().write(0, value);
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class WrapperPlayClientSteerVehicle extends PacketWrapper {
 	 * @return The current Forward
 	 */
 	public float getForward() {
-		return handle.getFloat().read(1);
+		return packetData.getFloat().read(1);
 	}
 
 	/**
@@ -47,23 +47,23 @@ public class WrapperPlayClientSteerVehicle extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setForward(float value) {
-		handle.getFloat().write(1, value);
+		packetData.getFloat().write(1, value);
 	}
 
 	public boolean isJump() {
-		return handle.getBooleans().read(0);
+		return packetData.getBooleans().read(0);
 	}
 
 	public void setJump(boolean value) {
-		handle.getBooleans().write(0, value);
+		packetData.getBooleans().write(0, value);
 	}
 
 	public boolean isUnmount() {
-		return handle.getBooleans().read(1);
+		return packetData.getBooleans().read(1);
 	}
 
 	public void setUnmount(boolean value) {
-		handle.getBooleans().write(1, value);
+		packetData.getBooleans().write(1, value);
 	}
 
 }

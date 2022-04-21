@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -12,19 +12,19 @@ public class WrapperPlayClientBoatMove extends PacketWrapper {
 	}
 
 	public boolean getLeftOar() {
-		return handle.getBooleans().read(0);
+		return packetData.getBooleans().read(0);
 	}
 
 	public void setLeftOar(boolean value) {
-		handle.getBooleans().write(0, value);
+		packetData.getBooleans().write(0, value);
 	}
 
 	public boolean getRightOar() {
-		return handle.getBooleans().read(1);
+		return packetData.getBooleans().read(1);
 	}
 
 	public void setRightOar(boolean value) {
-		handle.getBooleans().write(1, value);
+		packetData.getBooleans().write(1, value);
 	}
 
 }

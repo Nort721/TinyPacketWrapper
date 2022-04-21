@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -19,7 +19,7 @@ public class WrapperPlayClientAdvancements extends PacketWrapper {
      * @return The current Action
      */
     public Status getAction() {
-        return handle.getEnumModifier(Status.class, 0).readSafely(0);
+        return packetData.getEnumModifier(Status.class, 0).readSafely(0);
     }
     
     /**
@@ -27,7 +27,7 @@ public class WrapperPlayClientAdvancements extends PacketWrapper {
      * @param value - new value.
      */
     public void setAction(Status value) {
-        handle.getEnumModifier(Status.class, 0).writeSafely(0, value);
+        packetData.getEnumModifier(Status.class, 0).writeSafely(0, value);
     }
     /**
      * Retrieve Tab ID.
@@ -36,7 +36,7 @@ public class WrapperPlayClientAdvancements extends PacketWrapper {
      * @return The current Tab ID
      */
     public MinecraftKey getTabId() {
-        return handle.getMinecraftKeys().readSafely(0);
+        return packetData.getMinecraftKeys().readSafely(0);
     }
     
     /**
@@ -44,7 +44,7 @@ public class WrapperPlayClientAdvancements extends PacketWrapper {
      * @param value - new value.
      */
     public void setTabId(MinecraftKey value) {
-        handle.getMinecraftKeys().writeSafely(0, value);
+        packetData.getMinecraftKeys().writeSafely(0, value);
     }
 
     public enum Status {

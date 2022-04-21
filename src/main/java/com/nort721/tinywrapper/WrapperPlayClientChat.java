@@ -1,9 +1,9 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 
-public class WrapperPlayClientChat extends com.nort721.godseye.utils.tinywrapper.PacketWrapper {
+public class WrapperPlayClientChat extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.CHAT;
 
 	public WrapperPlayClientChat(PacketEvent packetEvent) {
@@ -16,7 +16,7 @@ public class WrapperPlayClientChat extends com.nort721.godseye.utils.tinywrapper
 	 * @return The current Message
 	 */
 	public String getMessage() {
-		return handle.getStrings().read(0);
+		return packetData.getStrings().read(0);
 	}
 
 	/**
@@ -25,7 +25,7 @@ public class WrapperPlayClientChat extends com.nort721.godseye.utils.tinywrapper
 	 * @param value - new value.
 	 */
 	public void setMessage(String value) {
-		handle.getStrings().write(0, value);
+		packetData.getStrings().write(0, value);
 	}
 
 }

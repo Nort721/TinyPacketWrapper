@@ -1,11 +1,11 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
-public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.utils.tinywrapper.PacketWrapper {
+public class WrapperPlayServerRelEntityMoveLook extends PacketWrapper {
 	public static final PacketType TYPE =
 			PacketType.Play.Server.REL_ENTITY_MOVE_LOOK;
 
@@ -21,7 +21,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @return The current Entity ID
 	 */
 	public int getEntityID() {
-		return handle.getIntegers().read(0);
+		return packetData.getIntegers().read(0);
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @param value - new value.
 	 */
 	public void setEntityID(int value) {
-		handle.getIntegers().write(0, value);
+		packetData.getIntegers().write(0, value);
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @return The spawned entity.
 	 */
 	public Entity getEntity(World world) {
-		return handle.getEntityModifier(world).read(0);
+		return packetData.getEntityModifier(world).read(0);
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @return The current DX
 	 */
 	public double getDx() {
-		return handle.getShorts().read(0) / 4096D;
+		return packetData.getShorts().read(0) / 4096D;
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @param value - new value.
 	 */
 	public void setDx(double value) {
-		handle.getShorts().write(0, (short) (value * 4096));
+		packetData.getShorts().write(0, (short) (value * 4096));
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @return The current DY
 	 */
 	public double getDy() {
-		return handle.getShorts().read(1) / 4096D;
+		return packetData.getShorts().read(1) / 4096D;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @param value - new value.
 	 */
 	public void setDy(double value) {
-		handle.getShorts().write(1, (short) (value * 4096));
+		packetData.getShorts().write(1, (short) (value * 4096));
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @return The current DZ
 	 */
 	public double getDz() {
-		return handle.getShorts().read(2) / 4096D;
+		return packetData.getShorts().read(2) / 4096D;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @param value - new value.
 	 */
 	public void setDz(double value) {
-		handle.getShorts().write(2, (short) (value * 4096));
+		packetData.getShorts().write(2, (short) (value * 4096));
 	}
 
 	/**
@@ -113,7 +113,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @return The current Yaw
 	 */
 	public float getYaw() {
-		return (handle.getBytes().read(0) * 360.F) / 256.0F;
+		return (packetData.getBytes().read(0) * 360.F) / 256.0F;
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @param value - new yaw.
 	 */
 	public void setYaw(float value) {
-		handle.getBytes().write(0, (byte) (value * 256.0F / 360.0F));
+		packetData.getBytes().write(0, (byte) (value * 256.0F / 360.0F));
 	}
 
 	/**
@@ -131,7 +131,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @return The current pitch
 	 */
 	public float getPitch() {
-		return (handle.getBytes().read(1) * 360.F) / 256.0F;
+		return (packetData.getBytes().read(1) * 360.F) / 256.0F;
 	}
 
 	/**
@@ -140,7 +140,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @param value - new pitch.
 	 */
 	public void setPitch(float value) {
-		handle.getBytes().write(1, (byte) (value * 256.0F / 360.0F));
+		packetData.getBytes().write(1, (byte) (value * 256.0F / 360.0F));
 	}
 
 	/**
@@ -149,7 +149,7 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @return The current On Ground
 	 */
 	public boolean getOnGround() {
-		return handle.getBooleans().read(0);
+		return packetData.getBooleans().read(0);
 	}
 
 	/**
@@ -158,6 +158,6 @@ public class WrapperPlayServerRelEntityMoveLook extends com.nort721.godseye.util
 	 * @param value - new value.
 	 */
 	public void setOnGround(boolean value) {
-		handle.getBooleans().write(0, value);
+		packetData.getBooleans().write(0, value);
 	}
 }

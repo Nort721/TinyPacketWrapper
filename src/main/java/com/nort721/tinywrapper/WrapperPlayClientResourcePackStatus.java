@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -21,7 +21,7 @@ public class WrapperPlayClientResourcePackStatus extends PacketWrapper {
 	 * @return The current Result
 	 */
 	public ResourcePackStatus getResult() {
-		return handle.getResourcePackStatus().read(0);
+		return packetData.getResourcePackStatus().read(0);
 	}
 
 	/**
@@ -30,6 +30,6 @@ public class WrapperPlayClientResourcePackStatus extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setResult(ResourcePackStatus value) {
-		handle.getResourcePackStatus().write(0, value);
+		packetData.getResourcePackStatus().write(0, value);
 	}
 }

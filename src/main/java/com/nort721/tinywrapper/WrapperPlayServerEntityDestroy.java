@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -18,7 +18,7 @@ public class WrapperPlayServerEntityDestroy extends PacketWrapper {
 	 * @return The current Count
 	 */
 	public int getCount() {
-		return handle.getIntegerArrays().read(0).length;
+		return packetData.getIntegerArrays().read(0).length;
 	}
 
 	/**
@@ -29,7 +29,7 @@ public class WrapperPlayServerEntityDestroy extends PacketWrapper {
 	 * @return The current Entity IDs
 	 */
 	public int[] getEntityIDs() {
-		return handle.getIntegerArrays().read(0);
+		return packetData.getIntegerArrays().read(0);
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class WrapperPlayServerEntityDestroy extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setEntityIds(int[] value) {
-		handle.getIntegerArrays().write(0, value);
+		packetData.getIntegerArrays().write(0, value);
 	}
 
 }

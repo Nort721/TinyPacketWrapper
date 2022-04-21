@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -18,7 +18,7 @@ public class WrapperPlayClientFlying extends PacketWrapper {
 	 * @return If packet has position.
 	 */
 	public boolean hasPosition() {
-		return handle.getBooleans().read(1);
+		return packetData.getBooleans().read(1);
 	}
 
 	/**
@@ -29,7 +29,7 @@ public class WrapperPlayClientFlying extends PacketWrapper {
 	 * @return If packet has position.
 	 */
 	public boolean hasLook() {
-		return handle.getBooleans().read(2);
+		return packetData.getBooleans().read(2);
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class WrapperPlayClientFlying extends PacketWrapper {
 	 * @return The current On Ground
 	 */
 	public boolean getOnGround() {
-		return handle.getBooleans().read(0);
+		return packetData.getBooleans().read(0);
 	}
 
 	/**
@@ -49,26 +49,26 @@ public class WrapperPlayClientFlying extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setOnGround(boolean value) {
-		handle.getBooleans().write(0, value);
+		packetData.getBooleans().write(0, value);
 	}
 
 	public double getX() {
-		return handle.getDoubles().read(0);
+		return packetData.getDoubles().read(0);
 	}
 
 	public double getY() {
-		return handle.getDoubles().read(1);
+		return packetData.getDoubles().read(1);
 	}
 
 	public double getZ() {
-		return handle.getDoubles().read(2);
+		return packetData.getDoubles().read(2);
 	}
 
 	public float getPitch() {
-		return handle.getFloat().read(1);
+		return packetData.getFloat().read(1);
 	}
 
 	public float getYaw() {
-		return handle.getFloat().read(0);
+		return packetData.getFloat().read(0);
 	}
 }

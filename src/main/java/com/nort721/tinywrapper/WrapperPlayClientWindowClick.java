@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -19,7 +19,7 @@ public class WrapperPlayClientWindowClick extends PacketWrapper {
 	 * @return The current Window ID
 	 */
 	public int getWindowId() {
-		return handle.getIntegers().read(0);
+		return packetData.getIntegers().read(0);
 	}
 
 	/**
@@ -28,7 +28,7 @@ public class WrapperPlayClientWindowClick extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setWindowId(int value) {
-		handle.getIntegers().write(0, value);
+		packetData.getIntegers().write(0, value);
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class WrapperPlayClientWindowClick extends PacketWrapper {
 	 * @return The current Slot
 	 */
 	public int getSlot() {
-		return handle.getIntegers().read(1);
+		return packetData.getIntegers().read(1);
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class WrapperPlayClientWindowClick extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setSlot(int value) {
-		handle.getIntegers().write(1, value);
+		packetData.getIntegers().write(1, value);
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class WrapperPlayClientWindowClick extends PacketWrapper {
 	 * @return The current Button
 	 */
 	public int getButton() {
-		return handle.getIntegers().read(2);
+		return packetData.getIntegers().read(2);
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class WrapperPlayClientWindowClick extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setButton(int value) {
-		handle.getIntegers().write(2, value);
+		packetData.getIntegers().write(2, value);
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class WrapperPlayClientWindowClick extends PacketWrapper {
 	 * @return The current Action number
 	 */
 	public short getActionNumber() {
-		return handle.getShorts().read(0);
+		return packetData.getShorts().read(0);
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class WrapperPlayClientWindowClick extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setActionNumber(short value) {
-		handle.getShorts().write(0, value);
+		packetData.getShorts().write(0, value);
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class WrapperPlayClientWindowClick extends PacketWrapper {
 	 * @return The current Clicked item
 	 */
 	public ItemStack getClickedItem() {
-		return handle.getItemModifier().read(0);
+		return packetData.getItemModifier().read(0);
 	}
 
 	/**
@@ -107,15 +107,15 @@ public class WrapperPlayClientWindowClick extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setClickedItem(ItemStack value) {
-		handle.getItemModifier().write(0, value);
+		packetData.getItemModifier().write(0, value);
 	}
 
 	public InventoryClickType getShift() {
-		return handle.getEnumModifier(InventoryClickType.class, 5).read(0);
+		return packetData.getEnumModifier(InventoryClickType.class, 5).read(0);
 	}
 
 	public void setShift(InventoryClickType value) {
-		handle.getEnumModifier(InventoryClickType.class, 5).write(0, value);
+		packetData.getEnumModifier(InventoryClickType.class, 5).write(0, value);
 	}
 
 	public enum InventoryClickType {

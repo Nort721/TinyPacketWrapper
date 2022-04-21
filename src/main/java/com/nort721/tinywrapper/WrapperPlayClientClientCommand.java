@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -19,7 +19,7 @@ public class WrapperPlayClientClientCommand extends PacketWrapper {
 	 * @return The current Action ID
 	 */
 	public ClientCommand getAction() {
-		return handle.getClientCommands().read(0);
+		return packetData.getClientCommands().read(0);
 	}
 
 	/**
@@ -28,7 +28,7 @@ public class WrapperPlayClientClientCommand extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setAction(ClientCommand value) {
-		handle.getClientCommands().write(0, value);
+		packetData.getClientCommands().write(0, value);
 	}
 
 }

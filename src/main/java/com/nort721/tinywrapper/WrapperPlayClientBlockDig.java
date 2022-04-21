@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -21,7 +21,7 @@ public class WrapperPlayClientBlockDig extends PacketWrapper {
 	 * @return The current Location
 	 */
 	public BlockPosition getLocation() {
-		return handle.getBlockPositionModifier().read(0);
+		return packetData.getBlockPositionModifier().read(0);
 	}
 
 	/**
@@ -30,15 +30,15 @@ public class WrapperPlayClientBlockDig extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setLocation(BlockPosition value) {
-		handle.getBlockPositionModifier().write(0, value);
+		packetData.getBlockPositionModifier().write(0, value);
 	}
 
 	public Direction getDirection() {
-		return handle.getDirections().read(0);
+		return packetData.getDirections().read(0);
 	}
 
 	public void setDirection(Direction value) {
-		handle.getDirections().write(0, value);
+		packetData.getDirections().write(0, value);
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class WrapperPlayClientBlockDig extends PacketWrapper {
 	 * @return The current Status
 	 */
 	public PlayerDigType getStatus() {
-		return handle.getPlayerDigTypes().read(0);
+		return packetData.getPlayerDigTypes().read(0);
 	}
 
 	/**
@@ -58,6 +58,6 @@ public class WrapperPlayClientBlockDig extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setStatus(PlayerDigType value) {
-		handle.getPlayerDigTypes().write(0, value);
+		packetData.getPlayerDigTypes().write(0, value);
 	}
 }

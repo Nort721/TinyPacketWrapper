@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -21,7 +21,7 @@ public class WrapperPlayClientEntityAction extends PacketWrapper {
 	 * @return The current Entity ID
 	 */
 	public int getEntityID() {
-		return handle.getIntegers().read(0);
+		return packetData.getIntegers().read(0);
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class WrapperPlayClientEntityAction extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setEntityID(int value) {
-		handle.getIntegers().write(0, value);
+		packetData.getIntegers().write(0, value);
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class WrapperPlayClientEntityAction extends PacketWrapper {
 	 * @return The spawned entity.
 	 */
 	public Entity getEntity(World world) {
-		return handle.getEntityModifier(world).read(0);
+		return packetData.getEntityModifier(world).read(0);
 	}
 
 	/**
@@ -61,7 +61,7 @@ public class WrapperPlayClientEntityAction extends PacketWrapper {
 	 * @return The current Action ID
 	 */
 	public PlayerAction getAction() {
-		return handle.getPlayerActions().read(0);
+		return packetData.getPlayerActions().read(0);
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class WrapperPlayClientEntityAction extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setAction(PlayerAction value) {
-		handle.getPlayerActions().write(0, value);
+		packetData.getPlayerActions().write(0, value);
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class WrapperPlayClientEntityAction extends PacketWrapper {
 	 * @return The current Jump Boost
 	 */
 	public int getJumpBoost() {
-		return handle.getIntegers().read(1);
+		return packetData.getIntegers().read(1);
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class WrapperPlayClientEntityAction extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setJumpBoost(int value) {
-		handle.getIntegers().write(1, value);
+		packetData.getIntegers().write(1, value);
 	}
 
 }

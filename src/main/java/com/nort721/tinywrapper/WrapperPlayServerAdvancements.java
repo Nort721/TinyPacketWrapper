@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -91,7 +91,7 @@ public class WrapperPlayServerAdvancements extends PacketWrapper {
      * @return The current Reset/Clear
      */
     public boolean isReset() {
-        return handle.getBooleans().read(0);
+        return packetData.getBooleans().read(0);
     }
     
     /**
@@ -99,26 +99,26 @@ public class WrapperPlayServerAdvancements extends PacketWrapper {
      * @param value - new value.
      */
     public void setReset(boolean value) {
-        handle.getBooleans().write(0,  value);
+        packetData.getBooleans().write(0,  value);
     }
 
     public Optional<Map<MinecraftKey, SerializedAdvancement>> getAdvancements() {
-        return handle.getMaps(MinecraftKey.getConverter(), WRAPPER).optionRead(0);
+        return packetData.getMaps(MinecraftKey.getConverter(), WRAPPER).optionRead(0);
     }
 
     public void setAdvancements(Map<MinecraftKey, SerializedAdvancement> value) {
-        handle.getMaps(MinecraftKey.getConverter(), WRAPPER).writeSafely(0, value);
+        packetData.getMaps(MinecraftKey.getConverter(), WRAPPER).writeSafely(0, value);
     }
 
     public Optional<Set<MinecraftKey>> getKeys() {
-        return handle.getSets(MinecraftKey.getConverter()).optionRead(0);
+        return packetData.getSets(MinecraftKey.getConverter()).optionRead(0);
     }
 
     public void setKeys(Set<MinecraftKey> value) {
-        handle.getSets(MinecraftKey.getConverter()).writeSafely(0, value);
+        packetData.getSets(MinecraftKey.getConverter()).writeSafely(0, value);
     }
 
     public Optional<Map<MinecraftKey, AdvancementProgress>> getProgress() {
-        return handle.getMaps(MinecraftKey.getConverter(), PROGRESS).optionRead(1);
+        return packetData.getMaps(MinecraftKey.getConverter(), PROGRESS).optionRead(1);
     }
 }

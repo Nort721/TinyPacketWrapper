@@ -1,4 +1,4 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
@@ -19,7 +19,7 @@ public class WrapperPlayClientVehicleMove extends PacketWrapper {
 	 * @return The current X
 	 */
 	public double getX() {
-		return handle.getDoubles().read(0);
+		return packetData.getDoubles().read(0);
 	}
 
 	/**
@@ -28,7 +28,7 @@ public class WrapperPlayClientVehicleMove extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setX(double value) {
-		handle.getDoubles().write(0, value);
+		packetData.getDoubles().write(0, value);
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class WrapperPlayClientVehicleMove extends PacketWrapper {
 	 * @return The current Y
 	 */
 	public double getY() {
-		return handle.getDoubles().read(1);
+		return packetData.getDoubles().read(1);
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class WrapperPlayClientVehicleMove extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setY(double value) {
-		handle.getDoubles().write(1, value);
+		packetData.getDoubles().write(1, value);
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class WrapperPlayClientVehicleMove extends PacketWrapper {
 	 * @return The current Z
 	 */
 	public double getZ() {
-		return handle.getDoubles().read(2);
+		return packetData.getDoubles().read(2);
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class WrapperPlayClientVehicleMove extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setZ(double value) {
-		handle.getDoubles().write(2, value);
+		packetData.getDoubles().write(2, value);
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class WrapperPlayClientVehicleMove extends PacketWrapper {
 	 * @return The current Yaw
 	 */
 	public float getYaw() {
-		return handle.getFloat().read(0);
+		return packetData.getFloat().read(0);
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class WrapperPlayClientVehicleMove extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setYaw(float value) {
-		handle.getFloat().write(0, value);
+		packetData.getFloat().write(0, value);
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class WrapperPlayClientVehicleMove extends PacketWrapper {
 	 * @return The current Pitch
 	 */
 	public float getPitch() {
-		return handle.getFloat().read(1);
+		return packetData.getFloat().read(1);
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class WrapperPlayClientVehicleMove extends PacketWrapper {
 	 * @param value - new value.
 	 */
 	public void setPitch(float value) {
-		handle.getFloat().write(1, value);
+		packetData.getFloat().write(1, value);
 	}
 
 }

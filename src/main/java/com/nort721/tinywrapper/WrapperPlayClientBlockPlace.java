@@ -1,10 +1,10 @@
-package com.nort721.tinywrapper;
+package com.nort721.godseye.utils.tinywrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.wrappers.EnumWrappers.Hand;
 
-public class WrapperPlayClientBlockPlace extends com.nort721.godseye.utils.tinywrapper.PacketWrapper {
+public class WrapperPlayClientBlockPlace extends PacketWrapper {
 	public static final PacketType TYPE = PacketType.Play.Client.BLOCK_PLACE;
 
 	public WrapperPlayClientBlockPlace(PacketEvent packetEvent) {
@@ -12,19 +12,19 @@ public class WrapperPlayClientBlockPlace extends com.nort721.godseye.utils.tinyw
 	}
 
 	public Hand getHand() {
-		return handle.getHands().read(0);
+		return packetData.getHands().read(0);
 	}
 
 	public void setHand(Hand value) {
-		handle.getHands().write(0, value);
+		packetData.getHands().write(0, value);
 	}
 
 	public long getTimestamp() {
-		return handle.getLongs().read(0);
+		return packetData.getLongs().read(0);
 	}
 
 	public void setTimestamp(long value) {
-		handle.getLongs().write(0, value);
+		packetData.getLongs().write(0, value);
 	}
 
 }
